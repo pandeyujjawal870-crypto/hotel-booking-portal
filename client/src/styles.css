@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'DM Sans', sans-serif; }
+  button, input { font: inherit; }
+}
+
+@layer components {
+  .eyebrow { @apply text-xs font-bold uppercase tracking-[0.2em] text-coral; }
+  .label { @apply mb-2 block text-xs font-bold uppercase tracking-wider text-ink/50; }
+  .text-input { @apply w-full rounded-xl border border-ink/10 bg-sand px-4 py-3 text-sm outline-none transition placeholder:text-ink/30 focus:border-coral focus:ring-2 focus:ring-coral/10; }
+  .date-input { @apply w-full rounded-xl border border-ink/10 bg-sand px-4 py-3 text-sm outline-none transition focus:border-coral focus:ring-2 focus:ring-coral/10; }
+  .field { @apply flex items-center gap-3 rounded-2xl px-4 py-3 transition focus-within:bg-sand; }
+  .field > svg { @apply shrink-0 text-coral; }
+  .field small { @apply block text-[11px] font-bold uppercase tracking-wider text-ink/40; }
+  .field input { @apply mt-1 w-full bg-transparent text-sm outline-none; }
+}
+
+.hero { min-height: 580px; }
+.hero-glow { position: absolute; width: 580px; height: 580px; right: -120px; top: -160px; border-radius: 9999px; background: radial-gradient(circle, rgba(249,115,96,.34), transparent 68%); filter: blur(18px); }
+.image-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 65%, rgba(18,52,59,.16)); pointer-events: none; }
